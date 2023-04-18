@@ -36,3 +36,8 @@ task bigJar(type: Jar) {
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
+
+task copyJar(type: Copy, dependsOn: bigJar) {
+    from(bigJar.archiveFile)
+    into project.rootProject.projectDir
+}
