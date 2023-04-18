@@ -18,6 +18,6 @@ public class BurpExtender implements IBurpExtender {
         this.stderr = new PrintWriter(callbacks.getStderr(), true); // for error console output
         callbacks.addSuiteTab(new HostsTab(callbacks));
         
-        stdout.println("Hello!");
+        stdout.println("Hosts Loader loaded");
     }
 }
